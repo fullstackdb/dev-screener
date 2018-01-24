@@ -15,7 +15,7 @@ type Props = {
 
 const styles = StyleSheet.create({
   Logo: {
-    borderRadius: 50,
+    borderRadius: '50%',
   },
 });
 

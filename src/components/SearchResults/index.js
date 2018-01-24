@@ -36,7 +36,7 @@ const renderSearchResult = curry((entities, item) => {
   } = entities[item];
   return (
     <li key={id} className={`${css(styles.SearchResults_item)}`}>
-      <ProfilePreview {...entities[id]} />
+      <ProfilePreview {...entities[id]} isGroup={true}/>
     </li>
   );
 });

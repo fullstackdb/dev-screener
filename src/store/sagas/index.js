@@ -2,7 +2,10 @@
 
 import {watchSearchUsers} from './Search';
 import {watchGetProfile} from './Profile';
-import {watchGetRepos} from './Repos';
+import {
+  watchGetRepos,
+  watchSortRepos,
+} from './Repos';
 import {watchGetFollowers} from './Followers';
 
 export default function* rootSaga() {
@@ -11,5 +14,6 @@ export default function* rootSaga() {
     watchGetProfile(),
     watchGetFollowers(),
     watchGetRepos(),
+    watchSortRepos(),
   ];
 }

@@ -13,6 +13,7 @@ import ProfilePreview from 'components/ProfilePreview';
 import RepoDetails from 'components/RepoDetails';
 import Loading from 'components/Loading';
 import ErrorBoundary from 'components/ErrorBoundary';
+import ReposFilter from 'components/ReposFilter';
 import {viewport} from 'theme';
 import 'suitcss-utils-flex/lib/flex-sm.css';
 import 'suitcss-utils-size/lib/size-sm.css';
@@ -36,14 +37,6 @@ const getUsername = get('match.params.username');
 const styles = StyleSheet.create({
   User_wrapLoading: {
     marginTop: 25,
-  },
-
-  User_repos: {
-    marginBottom: 20,
-
-    [viewport.SM]: {
-      marginBottom: 0,
-    },
   },
 
   User_contentTitle: {
@@ -105,6 +98,10 @@ export class UserContainer extends Component {
         <div className={`${css(styles.User_content)} Grid Grid--withGutter`}>
           <div className={`${css(styles.User_repos)} Grid-cell u-sm-size1of2`}>
             <h2 className={css(styles.User_contentTitle)}>Repositories</h2>
+            <ReposFilter
+              repos_url={this.props.userProfile.repos_url}
+              sortRepos={this.props.sortUserRepos}
+            />
             <ErrorBoundary>
               <ItemList
                 entities={repoEntities}

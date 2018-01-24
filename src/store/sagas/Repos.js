@@ -24,20 +24,15 @@ function reposSuccessAction(data: Object, url: string, {fromCache = false} = {})
 }
 
 export function* getRepos(action) {
-  const {payload: {url}} = action;
-  const cachedRepos = yield select(getReposFromCache(url));
+  const {payload: {url, sortBy}} = action;
+  const params = sortBy || {
+    sort: 'pushed',
+  };
 
-  if (cachedRepos) {
-    yield reposSuccessAction(cachedRepos, url, {fromCache: true});
-    return;
-  }
+  {/** TODO: rethink cache logic **/}
 
   try {
-    const reposResponse = yield call(api.get, url, {
-      params: {
-        sort: 'pushed',
-      },
-    });
+    const reposResponse = yield call(api.get, url, { params });
     const data = normalize(reposResponse.data, repoSchema);
     yield reposSuccessAction(data, url);
   } catch (err) {
@@ -51,4 +46,8 @@ export function* getRepos(action) {
 
 export function* watchGetRepos() {
   yield takeLatest('REPOS_REQUEST', getRepos);
+}
+
+export function* watchSortRepos() {
+  yield takeLatest('SORT_REPOS_REQUEST', getRepos);
 }

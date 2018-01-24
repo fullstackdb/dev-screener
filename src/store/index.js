@@ -1,6 +1,5 @@
 import {
   createStore,
-  combineReducers,
   applyMiddleware,
 } from 'redux';
 import createSagaMiddleware from 'redux-saga';
@@ -8,8 +7,8 @@ import flow from 'lodash/fp/flow';
 import debounce from 'lodash/fp/debounce';
 import isNull from 'lodash/fp/isNull';
 import {createLogger} from 'redux-logger';
-// import rootReducer from './reducers/Root';
-// import rootSaga from './sagas';
+import rootReducer from './reducers/Root';
+import rootSaga from './sagas';
 
 const CACHE_KEY = 'github-user-cache';
 
@@ -40,9 +39,7 @@ function loadState() {
 export default function configureStore() {
   const cachedState = loadState();
   const store = createStore(
-    combineReducers({
-      start: (state = [], action) => state
-    }),
+    rootReducer,
     cachedState,
     flow(
       window.devToolsExtension ? window.devToolsExtension() : f => f,
@@ -52,6 +49,7 @@ export default function configureStore() {
       )
     ),
   );
+  sagaMiddleware.run(rootSaga);
 
   store.subscribe(debounce(2000, () => {
     const {cache, entities} = store.getState();

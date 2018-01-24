@@ -16,18 +16,18 @@ export default function searchReducer(state: Object = initialState, action: Obje
     case 'SEARCH_REQUEST':
       return assignAll([
         state,
-        {isPending: true},
+        { isPending: true },
       ]);
 
     case 'SEARCH_SUCCESS':
       return assignAll([
         state,
         action.payload,
-        {isPending: false, error: null},
+        { isPending: false, error: null },
       ]);
 
     case 'SEARCH_FAILURE': {
-      if (!action.error) {return state;}
+      if (!action.error) { return state; }
       return assignAll([
         state,
         {

@@ -46,7 +46,7 @@ export function SearchResultsContainer(props: Props) {
     userIds,
   } = props;
 
-  if (!searchTerm) {return null;}
+  if (!searchTerm) { return null; }
 
   if (isPending) {
     return (

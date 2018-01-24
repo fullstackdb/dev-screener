@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import first from 'lodash/fp/first';
 import flow from 'lodash/fp/flow';
 import {
@@ -28,8 +28,10 @@ const getSearchQuery = flow(
   first
 );
 
-function renderLink({url, extraClassName, rel, text}: Object) {
-  if (!url) {return null;}
+function renderLink({ url, extraClassName, rel, text }: Object) {
+  if (!url) { 
+    return null; 
+  }
   const search = getSearchQuery(url);
 
   const linkClass = classNames(
@@ -41,7 +43,7 @@ function renderLink({url, extraClassName, rel, text}: Object) {
 
   return (
     <Link
-      to={{search}}
+      to={{ search }}
       className={linkClass}
       rel={rel}
     >
@@ -50,7 +52,7 @@ function renderLink({url, extraClassName, rel, text}: Object) {
   );
 }
 
-function Pagination({prev, next}: Props) {
+function Pagination({ prev, next }: Props) {
   const prevLink = renderLink({
     url: prev.url,
     extraClassName: 'u-flexRowReverse u-flexExpandRight',

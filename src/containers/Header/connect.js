@@ -1,6 +1,6 @@
 // @flow
 
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 export function mapDispatchToProps(dispatch: Function) {
   return {

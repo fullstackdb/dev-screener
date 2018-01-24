@@ -13,7 +13,7 @@ import UserBio from 'components/UserBio';
 import UserInfo from 'components/UserInfo';
 import UserStatistics from 'components/UserStatistics';
 import UserTitle from 'components/UserTitle';
-import {viewport} from 'theme';
+import { viewport } from 'theme';
 
 type Props = {
   avatar_url: string,
@@ -92,13 +92,6 @@ export default class UserHeader extends Component {
 
     return (
       <div className="u-sm-flex">
-        <div className={css(styles.UserHeader_avatar)}>
-          <Avatar
-            name={name}
-            width={230}
-            url={avatar_url}
-          />
-        </div>
         <div className="u-sm-flexGrow1 u-sm-flex u-sm-flexCol">
           <div className={css(styles.UserHeader_wrapTitle)}>
             <UserTitle
@@ -122,6 +115,13 @@ export default class UserHeader extends Component {
           <div className="u-sm-flexExpandTop">
             <UserStatistics stats={stats} />
           </div>
+        </div>
+        <div className={css(styles.UserHeader_avatar)}>
+          <Avatar
+            name={name}
+            width={230}
+            url={avatar_url}
+          />
         </div>
       </div>
     );

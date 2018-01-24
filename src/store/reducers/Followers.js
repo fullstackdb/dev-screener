@@ -12,7 +12,7 @@ export default function followersReducer(state: Object = initialState, action: O
     case 'FOLLOWERS_REQUEST':
       return assignAll([
         state,
-        {isPending: true},
+        { isPending: true },
       ]);
 
     case 'FOLLOWERS_SUCCESS':
@@ -26,7 +26,7 @@ export default function followersReducer(state: Object = initialState, action: O
       ]);
 
     case 'FOLLOWERS_FAILURE': {
-      if (!action.error) {return state;}
+      if (!action.error) { return state; }
       return assignAll([
         state,
         {

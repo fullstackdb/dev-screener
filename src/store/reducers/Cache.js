@@ -19,7 +19,7 @@ type addToCacheArgs = {
   data: any,
 };
 
-export function addToCache({state, cacheKey, type, data}: addToCacheArgs): Object {
+export function addToCache({ state, cacheKey, type, data }: addToCacheArgs): Object {
   if (isUndefined(cacheKey) || state[type][cacheKey]) {
     return state;
   }
@@ -68,7 +68,7 @@ export default function cacheReducer(state: Object = initialState, action: Objec
         state,
         cacheKey: action.payload.url,
         type: 'repos',
-        data: {result: action.payload.result},
+        data: { result: action.payload.result },
       });
 
     case 'FOLLOWERS_SUCCESS':
@@ -76,7 +76,7 @@ export default function cacheReducer(state: Object = initialState, action: Objec
         state,
         cacheKey: action.payload.url,
         type: 'followers',
-        data: {result: action.payload.result},
+        data: { result: action.payload.result },
       });
 
     default:

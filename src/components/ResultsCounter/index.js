@@ -19,8 +19,8 @@ const styles = StyleSheet.create({
   },
 });
 
-function ResultsCounter({searchTerm, resultsTotal, pageTotal}: Props) {
-  if (!searchTerm || !pageTotal) {return null;}
+function ResultsCounter({ searchTerm, resultsTotal, pageTotal }: Props) {
+  if (!searchTerm || !pageTotal) { return null; }
 
   return (
     <div className="u-flex u-flexJustifyEnd">

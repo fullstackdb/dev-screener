@@ -1,6 +1,6 @@
 // @flow
 
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
 import entitiesReducer from 'reducers/Entities';
 import searchReducer from 'reducers/Search';
 import profileReducer from 'reducers/Profile';

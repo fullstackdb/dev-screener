@@ -62,7 +62,7 @@ class SearchForm extends Component {
   }
 
   setInputValueState(inputValue: string): void {
-    this.setState(() => ({inputValue}));
+    this.setState(() => ({ inputValue }));
   }
 
   handleOnChange = (event: Object): void => {
@@ -72,7 +72,7 @@ class SearchForm extends Component {
 
   handleOnSubmit = (event: Object): void => {
     event.preventDefault();
-    if (!this.state.inputValue) {return;}
+    if (!this.state.inputValue) { return; }
     this.props.onSubmit(this.state.inputValue);
   }
 

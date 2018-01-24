@@ -7,7 +7,7 @@ import {
 } from 'aphrodite/no-important';
 import SearchForm from 'components/SearchForm';
 import Logo from 'components/Logo';
-import {viewport} from 'theme';
+import { viewport } from 'theme';
 import 'suitcss-utils-flex/lib/flex-sm.css';
 
 type Props = {
@@ -24,14 +24,14 @@ const styles = StyleSheet.create({
   Header_form: {
     marginTop: 20,
     width: 500,
-    
+
     [viewport.SM]: {
       margin: 0,
     },
   },
 });
 
-export default function Header({onSubmit, searchTerm}: Props) {
+export default function Header({ onSubmit, searchTerm }: Props) {
   return (
     <div
       className={`${css(styles.Header)} u-sm-flex u-sm-flexJustifyCenter u-sm-flexAlignItemsCenter`}

@@ -8,7 +8,7 @@ import {
   css,
 } from 'aphrodite/no-important';
 import ProfilePreview from 'components/ProfilePreview';
-import {viewport} from 'theme';
+import { viewport } from 'theme';
 import 'suitcss-utils-flex/lib/flex-sm.css';
 
 type Props = {
@@ -36,12 +36,12 @@ const renderSearchResult = curry((entities, item) => {
   } = entities[item];
   return (
     <li key={id} className={`${css(styles.SearchResults_item)}`}>
-      <ProfilePreview {...entities[id]} isGroup={true}/>
+      <ProfilePreview {...entities[id]} isGroup={true} />
     </li>
   );
 });
 
-function SearchResults({entities, ids}: Props) {
+function SearchResults({ entities, ids }: Props) {
   return (
     <ul className={`${css(styles.SearchResults)} u-sm-flex u-sm-flexWrap`}>
       {map(renderSearchResult(entities), ids)}

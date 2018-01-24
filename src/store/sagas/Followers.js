@@ -5,16 +5,16 @@ import {
   takeLatest,
 } from 'redux-saga/effects';
 import api from 'store/api';
-import {normalize} from 'normalizr';
+import { normalize } from 'normalizr';
 import {
   userSchema,
 } from 'store/schema';
-import {getFollowersFromCache} from 'store/reducers/Cache';
+import { getFollowersFromCache } from 'store/reducers/Cache';
 
-function followersSuccessAction(data: Object, url: string, {fromCache = false} = {}) {
+function followersSuccessAction(data: Object, url: string, { fromCache = false } = {}) {
   return put({
     type: 'FOLLOWERS_SUCCESS',
-    meta: {fromCache},
+    meta: { fromCache },
     payload: {
       entities: data.entities,
       result: data.result,
@@ -24,11 +24,11 @@ function followersSuccessAction(data: Object, url: string, {fromCache = false} =
 }
 
 export function* getFollowers(action) {
-  const {payload: {url}} = action;
+  const { payload: { url } } = action;
   const cachedFollowers = yield select(getFollowersFromCache(url));
 
   if (cachedFollowers) {
-    yield followersSuccessAction(cachedFollowers, url, {fromCache: true});
+    yield followersSuccessAction(cachedFollowers, url, { fromCache: true });
     return;
   }
 

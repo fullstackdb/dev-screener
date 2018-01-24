@@ -1,8 +1,8 @@
 // @flow
 
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import get from 'lodash/fp/get';
-import type {ReposFilter} from './index';
+import type { ReposFilter } from './index';
 
 export function mapStateToProps(state: Object): Object {
   // console.log('state', state);
@@ -21,7 +21,7 @@ export function mapStateToProps(state: Object): Object {
 export function mapDispatchToProps(dispatch: Function) {
   return {
     getUserProfile(username: string | void) {
-      if (!username) {return;}
+      if (!username) { return; }
       dispatch({
         type: 'PROFILE_REQUEST',
         payload: {
@@ -30,7 +30,7 @@ export function mapDispatchToProps(dispatch: Function) {
       });
     },
     sortUserRepos(url: string, sortBy: ReposFilter) {
-      if (!url) {return;}
+      if (!url) { return; }
       dispatch({
         type: 'SORT_REPOS_REQUEST',
         payload: {

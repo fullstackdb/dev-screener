@@ -2,14 +2,14 @@
 
 import React from 'react';
 import qs from 'query-string';
-import {Route} from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import curry from 'lodash/fp/curry';
 import {
   css,
   StyleSheet,
 } from 'aphrodite/no-important';
 import HeaderContainer from 'containers/Header';
-import {PER_PAGE} from 'store/api';
+import { PER_PAGE } from 'store/api';
 import 'suitcss-utils-flex/lib/flex.css';
 
 
@@ -42,7 +42,7 @@ export const pushUrlQuery = curry((push: Function, query: string) => {
 });
 
 const renderRoute = curry((Component, matchProps) => {
-  const {location, history: {push}} = matchProps;
+  const { location, history: { push } } = matchProps;
   const parsedSearch = qs.parse(location.search);
   const searchTerm = parsedSearch.q;
 

@@ -18,12 +18,12 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function UserBio({text}: Props) {
-  if (!text) {return null;}
+export default function UserBio({ text }: Props) {
+  if (!text) { return null; }
   return (
     <p
       className={css(styles.UserBio)}
-      dangerouslySetInnerHTML={{__html: linkToGithub(text)}}
+      dangerouslySetInnerHTML={{ __html: linkToGithub(text) }}
     />
   );
 }

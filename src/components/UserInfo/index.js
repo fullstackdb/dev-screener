@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
 });
 
 function renderLocation(text: string | null): React$Element<*> | null {
-  if (!text) {return null;}
+  if (!text) { return null; }
   return (
     <li className={`${css(styles.UserInfo_item)} u-flex u-flexAlignItemsCenter`}>
       <p className={css(styles.UserInfo_text)}>Location: {text}</p>
@@ -40,7 +40,7 @@ function renderLocation(text: string | null): React$Element<*> | null {
 }
 
 function renderLink(link: string | null): React$Element<*> | null {
-  if (!link) {return null;}
+  if (!link) { return null; }
   return (
     <li className={`${css(styles.UserInfo_item)} u-flex u-flexAlignItemsCenter`}>
       <p className={css(styles.UserInfo_text)}>
@@ -51,12 +51,12 @@ function renderLink(link: string | null): React$Element<*> | null {
 }
 
 function renderCompany(text: string | null): React$Element<*> | null {
-  if (!text) {return null;}
+  if (!text) { return null; }
   return (
     <li className={`${css(styles.UserInfo_item)} u-flex u-flexAlignItemsCenter`}>
       <p
         className={css(styles.UserInfo_text)}
-        dangerouslySetInnerHTML={{__html: `Company: ${linkToGithub(text)}`}}
+        dangerouslySetInnerHTML={{ __html: `Company: ${linkToGithub(text)}` }}
       />
     </li>
   );
@@ -64,8 +64,8 @@ function renderCompany(text: string | null): React$Element<*> | null {
 
 const allNull = every(isNull);
 
-export default function UserInfo({blog, company, location}: Props) {
-  if (allNull([blog, company, location])) {return null;}
+export default function UserInfo({ blog, company, location }: Props) {
+  if (allNull([blog, company, location])) { return null; }
 
   return (
     <ul>

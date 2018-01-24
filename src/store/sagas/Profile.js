@@ -8,7 +8,7 @@ import pick from 'lodash/fp/pick';
 import get from 'lodash/fp/get';
 import flow from 'lodash/fp/flow';
 import api from 'store/api';
-import {getProfileFromCache} from 'store/reducers/Cache';
+import { getProfileFromCache } from 'store/reducers/Cache';
 
 const pickProfileData = flow(
   get('data'),
@@ -47,10 +47,10 @@ function* requestAdditionalProfileData(data) {
 }
 
 export function* getProfile(action) {
-  const {payload: {username}} = action;
+  const { payload: { username } } = action;
   const cachedProfile = yield select(getProfileFromCache(username));
   let profile;
-  const meta = {fromCache: false};
+  const meta = { fromCache: false };
 
   if (cachedProfile) {
     profile = cachedProfile;

@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function Logo({url, name, width}: Props) {
+export default function Logo({ url, name, width }: Props) {
   const alt = name ? `${name}'s logo` : 'User logo';
   return (
     <Image

@@ -14,7 +14,7 @@ import RepoDetails from 'components/RepoDetails';
 import Loading from 'components/Loading';
 import ErrorBoundary from 'components/ErrorBoundary';
 import ReposFilter from 'components/ReposFilter';
-import {viewport} from 'theme';
+import { viewport } from 'theme';
 import 'suitcss-utils-flex/lib/flex-sm.css';
 import 'suitcss-utils-size/lib/size-sm.css';
 import 'suitcss-components-grid';
@@ -118,6 +118,7 @@ export class UserContainer extends Component {
                 entities={userEntities}
                 ids={followerIds}
                 isPending={followerIsPending}
+                isGroup={false}
                 component={ProfilePreview}
               />
             </ErrorBoundary>

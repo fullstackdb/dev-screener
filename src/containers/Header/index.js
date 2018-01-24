@@ -41,7 +41,9 @@ export class HeaderContainer extends Component {
   }
 
   handleSearchUser(searchQuery: string): void {
-    if (!searchQuery) {return;}
+    if (!searchQuery) {
+      return;
+    }
     this.props.searchForUser(searchQuery);
   }
 

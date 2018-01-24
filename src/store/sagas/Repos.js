@@ -5,16 +5,16 @@ import {
   takeLatest,
 } from 'redux-saga/effects';
 import api from 'store/api';
-import {normalize} from 'normalizr';
+import { normalize } from 'normalizr';
 import {
   repoSchema,
 } from 'store/schema';
-import {getReposFromCache} from 'store/reducers/Cache';
+import { getReposFromCache } from 'store/reducers/Cache';
 
-function reposSuccessAction(data: Object, url: string, {fromCache = false} = {}) {
+function reposSuccessAction(data: Object, url: string, { fromCache = false } = {}) {
   return put({
     type: 'REPOS_SUCCESS',
-    meta: {fromCache},
+    meta: { fromCache },
     payload: {
       entities: data.entities,
       result: data.result,
@@ -24,12 +24,12 @@ function reposSuccessAction(data: Object, url: string, {fromCache = false} = {})
 }
 
 export function* getRepos(action) {
-  const {payload: {url, sortBy}} = action;
+  const { payload: { url, sortBy } } = action;
   const params = sortBy || {
     sort: 'pushed',
   };
 
-  {/** TODO: rethink cache logic **/}
+  {/** TODO: rethink cache logic **/ }
 
   try {
     const reposResponse = yield call(api.get, url, { params });

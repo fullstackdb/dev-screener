@@ -7,7 +7,7 @@ import {
 } from 'aphrodite/no-important';
 import 'suitcss-utils-flex/lib/flex.css';
 
-const map = require('lodash/fp/map').convert({cap: false});
+const map = require('lodash/fp/map').convert({ cap: false });
 
 type Props = {
   stats: Object,
@@ -39,7 +39,7 @@ const renderStat = map((value, key) => {
   );
 });
 
-export default function ProfileStatistics({stats}: Props) {
+export default function ProfileStatistics({ stats }: Props) {
   return (
     <ul className="u-flex">
       {renderStat(stats)}

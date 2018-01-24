@@ -8,13 +8,13 @@ import isEmpty from 'lodash/fp/isEmpty';
 import DocumentTitle from 'react-document-title';
 
 function constructTitle(search: Object): string {
-  if (isEmpty(search)) {return pageTitle();}
-  const {q, page} = search;
+  if (isEmpty(search)) { return pageTitle(); }
+  const { q, page } = search;
   return pageTitle(`${q} - Page ${page}`);
 }
 
 function HomeScreen(matchProps: Object) {
-  const {location} = matchProps;
+  const { location } = matchProps;
   const parsedSearch = qs.parse(location.search);
   const title = constructTitle(parsedSearch);
 

@@ -56,7 +56,7 @@ class Image extends Component {
   }
 
   renderSpinner() {
-    if (this.state.status === 'loaded') {return null;}
+    if (this.state.status === 'loaded') { return null; }
     return (
       <Spinner
         className={css(styles.Image_spinner)}
@@ -80,7 +80,7 @@ class Image extends Component {
     return (
       <div
         className={css(styles.Image)}
-        style={{minHeight}}
+        style={{ minHeight }}
       >
         <img
           alt=""

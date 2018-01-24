@@ -1,4 +1,4 @@
-import {schema} from 'normalizr';
+import { schema } from 'normalizr';
 import pick from 'lodash/fp/pick';
 
 const pickRepoData = pick([

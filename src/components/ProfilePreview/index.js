@@ -5,14 +5,14 @@ import {
   StyleSheet,
   css,
 } from 'aphrodite/no-important';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import 'suitcss-utils-flex/lib/flex.css';
 import Logo from 'components/Logo';
 
 type Props = {
   login: string,
   avatar_url: string,
-  isGroup: boolean,
+  isGroup?: boolean,
 };
 
 const styles = StyleSheet.create({
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function ProfilePreview({login, avatar_url, isGroup}: Props) {
+export default function ProfilePreview({ login, avatar_url, isGroup }: Props) {
   return (
     <Link
       to={login}

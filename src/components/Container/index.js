@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function Container({noGutter, rootStyle, children}: Props) {
+export default function Container({ noGutter, rootStyle, children }: Props) {
   const className = css(
     styles.Container_inner,
     noGutter ? false : styles.Container_padding,

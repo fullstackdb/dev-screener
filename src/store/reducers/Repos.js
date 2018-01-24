@@ -12,7 +12,7 @@ export default function reposReducer(state: Object = initialState, action: Objec
     case 'REPOS_REQUEST':
       return assignAll([
         state,
-        {isPending: true},
+        { isPending: true },
       ]);
 
     case 'REPOS_SUCCESS':
@@ -26,7 +26,7 @@ export default function reposReducer(state: Object = initialState, action: Objec
       ]);
 
     case 'REPOS_FAILURE': {
-      if (!action.error) {return state;}
+      if (!action.error) { return state; }
       return assignAll([
         state,
         {

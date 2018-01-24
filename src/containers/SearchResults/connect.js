@@ -1,6 +1,6 @@
 // @flow
 
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import get from 'lodash/fp/get';
 
 export function mapStateToProps(state: Object): Object {

@@ -12,15 +12,15 @@ const api = axios.create({
 
 const token = process.env.USER_SEARCH_OAUTH;
 if (token) {
-  api.defaults.headers.common.Authorization = `token ${token}`;
+  api.defaults.headers.common.Authorization = `${token}`;
 }
 
 function addPagination(response: Object): Object {
-  const {data, headers} = response;
+  const { data, headers } = response;
   const pagination = parseLinkHeader(headers.link);
   return assignAll([
     data,
-    {pagination},
+    { pagination },
   ]);
 }
 
